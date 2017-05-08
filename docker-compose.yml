@@ -20,7 +20,7 @@ services:
         image: alpine
         volumes: 
             - backup:/backup
-        command: ["sh", "-c", "sleep 0.1; ls -1 --color=never /backup/${ARCHIVE}"]
+        command: ["sh", "-c", "sleep 0.1; ls -1 --color=never /backup/${ARCHIVE} 2>/dev/null"]
 
 volumes:
     volume:

@@ -1,7 +1,10 @@
 version: '2'
 
 services:
- 
+
+    main:
+        image: alpine
+
     backup:
         image: loomchild/volume-backup:latest
         volumes: 

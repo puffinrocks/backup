@@ -7,21 +7,21 @@ services:
 
     backup:
         image: loomchild/volume-backup:latest
-        volumes: 
+        volumes:
             - volume:/volume
             - backup:/backup
         command: ["backup", "${ARCHIVE}"]
 
     restore:
         image: loomchild/volume-backup:latest
-        volumes: 
+        volumes:
             - volume:/volume
             - backup:/backup
         command: ["restore", "${ARCHIVE}"]
 
     list:
         image: alpine
-        volumes: 
+        volumes:
             - backup:/backup
         command: ["sh", "-c", "sleep 0.1; ls -1 --color=never /backup/${ARCHIVE} 2>/dev/null"]
 
